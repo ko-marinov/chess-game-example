@@ -2,16 +2,9 @@ using System;
 
 public class Queen : Piece
 {
-	private Board _board;
-	private Color _color;
-
-	public Queen(Board board, Color color)
+	public Queen(Color color, Board board = null) : base(color, board)
 	{
-		_board = board;
-		_color = color;
 	}
-
-	public override Color GetColor() => _color;
 
 	public override void Move(Point from, Point to)
 	{
@@ -21,6 +14,6 @@ public class Queen : Piece
 	// ToString override to display board characters
 	public override string ToString()
 	{
-		return _color == Color.White ? "Q" : "q";
+		return Color == Color.White ? "Q" : "q";
 	}
 }

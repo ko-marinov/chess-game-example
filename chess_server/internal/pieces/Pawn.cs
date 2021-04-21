@@ -2,16 +2,9 @@ using System;
 
 public class Pawn : Piece
 {
-	private Board _board;
-	private Color _color;
-
-	public Pawn(Board board, Color color)
+	public Pawn(Color color, Board board = null) : base(color, board)
 	{
-		_board = board;
-		_color = color;
 	}
-
-	public override Color GetColor() => _color;
 
 	public override void Move(Point from, Point to)
 	{
@@ -21,6 +14,6 @@ public class Pawn : Piece
 	// ToString override to display board characters
 	public override string ToString()
 	{
-		return _color == Color.White ? "P" : "p";
+		return Color == Color.White ? "P" : "p";
 	}
 }

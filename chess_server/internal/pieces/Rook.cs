@@ -2,16 +2,9 @@ using System;
 
 public class Rook : Piece
 {
-	private Board _board;
-	private Color _color;
-
-	public Rook(Board board, Color color)
+	public Rook(Color color, Board board = null) : base(color, board)
 	{
-		_board = board;
-		_color = color;
 	}
-
-	public override Color GetColor() => _color;
 
 	public override void Move(Point from, Point to)
 	{
@@ -21,6 +14,6 @@ public class Rook : Piece
 	// ToString override to display board characters
 	public override string ToString()
 	{
-		return _color == Color.White ? "R" : "r";
+		return Color == Color.White ? "R" : "r";
 	}
 }
